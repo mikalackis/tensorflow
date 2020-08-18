@@ -54,7 +54,8 @@ public abstract class Classifier {
     FLOAT_MOBILENET,
     QUANTIZED_MOBILENET,
     FLOAT_EFFICIENTNET,
-    QUANTIZED_EFFICIENTNET
+    QUANTIZED_EFFICIENTNET,
+    NUDITY
   }
 
   /** The runtime device type used for executing classification. */
@@ -120,7 +121,7 @@ public abstract class Classifier {
     } else if (model == Model.QUANTIZED_EFFICIENTNET) {
       return new ClassifierQuantizedEfficientNet(activity, device, numThreads);
     } else {
-      throw new UnsupportedOperationException();
+      return new ClassifierNudity(activity, device, numThreads);
     }
   }
 

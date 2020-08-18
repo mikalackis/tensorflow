@@ -121,7 +121,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
       return;
     }
     final Device device = getDevice();
-    final Model model = getModel();
+    final Model model = Model.NUDITY;
     final int numThreads = getNumThreads();
     runInBackground(() -> recreateClassifier(model, device, numThreads));
   }
